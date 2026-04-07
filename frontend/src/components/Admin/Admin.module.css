@@ -1,0 +1,396 @@
+/* Shared Admin styles */
+
+/* ── Summary Cards ─────────────────────────────────────────── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.card:hover { border-color: rgba(255, 255, 255, 0.1); }
+
+.card-neon  { border-left: 3px solid var(--color-neon); }
+.card-red   { border-left: 3px solid var(--color-action); }
+.card-gold  { border-left: 3px solid #ffd700; }
+.card-gray  { border-left: 3px solid #555; }
+
+.cardIcon { font-size: 2rem; }
+
+.cardBody { display: flex; flex-direction: column; gap: 0.15rem; }
+
+.cardLabel {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cardValue {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.cardSub {
+  font-size: 0.75rem;
+  color: var(--color-neon);
+}
+
+/* ── Chart ─────────────────────────────────────────────────── */
+.chartCard {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.periodToggle {
+  display: flex;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+.periodBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.periodActive {
+  background: var(--color-action);
+  color: white;
+}
+
+.tooltip {
+  background: #1a1a1a;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.tooltipLabel {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.tooltipVal {
+  font-size: 0.88rem;
+  color: var(--color-neon);
+  font-weight: 600;
+}
+
+/* ── Table ─────────────────────────────────────────────────── */
+.tableCard {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tableWrapper { overflow-x: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.tr { border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
+.tr:last-child { border-bottom: none; }
+.tr:hover { background: rgba(255, 255, 255, 0.02); }
+
+.td {
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.timeTag {
+  background: rgba(0, 200, 255, 0.08);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-neon);
+  white-space: nowrap;
+}
+
+.clientName {
+  display: block;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.clientPhone {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-neon);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-pending   { background: rgba(255, 165, 0, 0.1); color: #ffa500; }
+.badge-confirmed { background: rgba(0, 200, 255, 0.1); color: var(--color-neon); }
+.badge-completed { background: rgba(0, 200, 80, 0.1);  color: #00c850; }
+.badge-cancelled { background: rgba(220, 20, 60, 0.1); color: var(--color-action); }
+
+.actions { display: flex; gap: 0.4rem; }
+
+.actionBtn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-text-muted);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.actionBtn:hover {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+}
+
+.actionBtnDanger:hover {
+  border-color: var(--color-action);
+  color: var(--color-action);
+}
+
+/* ── Modal ─────────────────────────────────────────────────── */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  background: #0d0d0d;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.modalTitle {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.modalSub {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.modalSub strong { color: var(--color-text); }
+
+.field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+
+.fieldLabel {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.fieldInput {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  padding: 0.7rem 0.9rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.fieldInput:focus {
+  border-color: var(--color-neon);
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.1);
+}
+
+.textarea { resize: vertical; min-height: 70px; }
+
+.fieldHint {
+  font-size: 0.75rem;
+  color: var(--color-neon);
+}
+
+.fieldError {
+  font-size: 0.8rem;
+  color: var(--color-action);
+  margin-bottom: 0.75rem;
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+/* ── Form / Management ─────────────────────────────────────── */
+.formCard {
+  background: #0d0d0d;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formCardTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.colSpan2 { grid-column: span 2; }
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btnPrimary {
+  background: var(--color-action);
+  color: white;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: 0 0 14px var(--color-action-glow);
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--color-action-hover);
+  box-shadow: 0 0 25px var(--color-action-glow);
+}
+
+.btnPrimary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btnSecondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-muted);
+  padding: 0.65rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.btnSecondary:hover:not(:disabled) {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+@media (max-width: 1100px) {
+  .cardsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .cardsGrid { grid-template-columns: 1fr; }
+  .formGrid  { grid-template-columns: 1fr; }
+  .colSpan2  { grid-column: span 1; }
+}

@@ -1,0 +1,181 @@
+.about {
+  padding: 8rem 0;
+  background: var(--color-bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-neon), transparent);
+  opacity: 0.4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(145deg, #111 0%, #1a1a1a 60%, #0d0d0d 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgba(0, 200, 255, 0.07);
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+.imageLines {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(0, 200, 255, 0.02) 40px,
+      rgba(0, 200, 255, 0.02) 41px
+    );
+}
+
+.imageAccent {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 100px;
+  height: 100px;
+  background: var(--color-action);
+  border-radius: 8px;
+  z-index: -1;
+  box-shadow: 0 0 40px var(--color-action-glow);
+}
+
+.experienceBadge {
+  position: absolute;
+  top: 2rem;
+  left: -2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.badgeNum {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neon);
+  text-shadow: 0 0 10px var(--color-neon-glow);
+}
+
+.badgeText {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-neon);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.title span {
+  color: var(--color-neon);
+}
+
+.text {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.featureItem:hover {
+  border-color: var(--color-neon);
+  box-shadow: 0 0 14px var(--color-neon-glow);
+}
+
+.featureIcon { font-size: 1.3rem; }
+
+.featureLabel {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .container { grid-template-columns: 1fr; gap: 3rem; }
+  .imageWrapper { max-width: 380px; margin: 0 auto; }
+  .experienceBadge { left: 1rem; }
+  .features { grid-template-columns: 1fr; }
+}
