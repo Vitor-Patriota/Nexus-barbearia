@@ -3,12 +3,12 @@ import { auth } from './firebase'
 import type { Appointment, Service, Barber, FinishServicePayload } from '../types'
 
 const DEV_AUTH_ENABLED =
-  import.meta.env.DEV && import.meta.env.VITE_ENABLE_DEV_AUTH === 'true'
+  import.meta.env.DEV && import.meta.env.VITE_ENABLE_DEV_AUTH !== 'false'
 
 let unauthorizedRedirectInProgress = false
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL?.replace(/\/+$/, '') || '/api',
 })
 
 api.interceptors.request.use(async (config) => {

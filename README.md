@@ -39,6 +39,10 @@ npm run dev
 
 API disponível em: `http://localhost:5000`
 
+## Deploy na Vercel
+
+O backend precisa estar hospedado separadamente. Configure `VITE_API_URL` no projeto frontend como a URL pública da API terminando em `/api` (por exemplo, `https://api.exemplo.com/api`) e configure as variáveis `VITE_FIREBASE_*` do `.env.example` no build da Vercel. No backend, defina `CORS_ORIGINS` com a origem exata do frontend e `ADMIN_EMAILS` com os e-mails das contas administrativas cadastradas no Firebase Authentication.
+
 ## Endpoints da API
 
 ### Público
@@ -48,12 +52,12 @@ API disponível em: `http://localhost:5000`
 | `GET` | `/api/services` | Lista todos os serviços |
 | `GET` | `/api/barbers` | Lista todos os barbeiros |
 | `POST` | `/api/appointments` | Cria novo agendamento |
-| `GET` | `/api/appointments?date=YYYY-MM-DD` | Busca agendamentos por data |
 
-### Protegidos (requer token Firebase)
+### Protegidos (requer token Firebase e e-mail listado em `ADMIN_EMAILS`)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
+| `GET` | `/api/appointments?date=YYYY-MM-DD` | Busca agendamentos por data |
 | `PATCH` | `/api/appointments/:id/status` | Atualiza status (finalizar/cancelar) |
 | `POST` | `/api/services` | Cria serviço |
 | `PUT` | `/api/services/:id` | Edita serviço |
@@ -63,6 +67,8 @@ API disponível em: `http://localhost:5000`
 | `DELETE` | `/api/barbers/:id` | Remove barbeiro |
 | `GET` | `/api/admin/stats` | Estatísticas do dashboard |
 | `GET` | `/api/admin/revenue?period=week\|month` | Dados do gráfico de receita |
+
+`GET /api/appointments` também é protegido e retorna dados pessoais dos clientes; somente administradores devem acessá-lo.
 
 ### Agendamento (Multi-step)
 1. Seleção do serviço

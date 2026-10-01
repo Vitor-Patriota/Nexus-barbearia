@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useBooking } from '../../contexts/BookingContext'
 import styles from './Navbar.module.css'
 
@@ -48,6 +49,15 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              to="/admin"
+              className={styles.navLink}
+              onClick={() => setMenuOpen(false)}
+            >
+              Admin
+            </Link>
+          </li>
           <li>
             <button
               className={styles.ctaBtn}

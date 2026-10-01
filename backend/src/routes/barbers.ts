@@ -7,13 +7,13 @@ import {
   createValidators,
   updateValidators,
 } from '../controllers/barbersController'
-import { requireAuth } from '../middleware/auth'
+import { requireAdmin } from '../middleware/auth'
 
 const router = Router()
 
 router.get('/', getBarbers)
-router.post('/', requireAuth, createValidators, createBarber)
-router.put('/:id', requireAuth, updateValidators, updateBarber)
-router.delete('/:id', requireAuth, deleteBarber)
+router.post('/', requireAdmin, createValidators, createBarber)
+router.put('/:id', requireAdmin, updateValidators, updateBarber)
+router.delete('/:id', requireAdmin, deleteBarber)
 
 export default router

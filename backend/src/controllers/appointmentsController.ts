@@ -17,7 +17,7 @@ export const createValidators = [
   body('time').matches(/^\d{2}:\d{2}$/),
   body('clientName').isString().isLength({ min: 2, max: 80 }).trim().escape(),
   body('clientPhone').isMobilePhone('pt-BR'),
-  body('clientEmail').optional().isEmail().normalizeEmail(),
+  body('clientEmail').optional({ values: 'falsy' }).isEmail().normalizeEmail(),
 ]
 
 export const statusValidators = [

@@ -7,13 +7,13 @@ import {
   createValidators,
   updateValidators,
 } from '../controllers/servicesController'
-import { requireAuth } from '../middleware/auth'
+import { requireAdmin } from '../middleware/auth'
 
 const router = Router()
 
 router.get('/', getServices)
-router.post('/', requireAuth, createValidators, createService)
-router.put('/:id', requireAuth, updateValidators, updateService)
-router.delete('/:id', requireAuth, deleteService)
+router.post('/', requireAdmin, createValidators, createService)
+router.put('/:id', requireAdmin, updateValidators, updateService)
+router.delete('/:id', requireAdmin, deleteService)
 
 export default router

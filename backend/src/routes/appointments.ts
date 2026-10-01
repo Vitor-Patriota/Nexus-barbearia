@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { requireAdmin } from '../middleware/auth'
 import {
   createAppointment,
   getAppointments,
@@ -10,8 +11,8 @@ import {
 
 const router = Router()
 
-router.get('/', dateQueryValidator, getAppointments)
+router.get('/', requireAdmin, dateQueryValidator, getAppointments)
 router.post('/', createValidators, createAppointment)
-router.patch('/:id/status', statusValidators, updateStatus)
+router.patch('/:id/status', requireAdmin, statusValidators, updateStatus)
 
 export default router

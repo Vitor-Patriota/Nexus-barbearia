@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import styles from './LoginPage.module.css'
 
+const DEV_AUTH_ENABLED =
+  import.meta.env.DEV && import.meta.env.VITE_ENABLE_DEV_AUTH !== 'false'
+const DEV_ADMIN_EMAIL = import.meta.env.VITE_DEV_ADMIN_EMAIL || 'admin@bronxbarber.com'
+const DEV_ADMIN_PASSWORD = import.meta.env.VITE_DEV_ADMIN_PASSWORD || 'admin123'
+
 export default function LoginPage() {
   const { login } = useAuth()
   const navigate = useNavigate()
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState(DEV_AUTH_ENABLED ? DEV_ADMIN_EMAIL : '')
+  const [password, setPassword] = useState(DEV_AUTH_ENABLED ? DEV_ADMIN_PASSWORD : '')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 

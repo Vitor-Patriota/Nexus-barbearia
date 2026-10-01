@@ -11,7 +11,7 @@ interface AuthUser {
 }
 
 const DEV_AUTH_ENABLED =
-  import.meta.env.DEV && import.meta.env.VITE_ENABLE_DEV_AUTH === 'true'
+  import.meta.env.DEV && import.meta.env.VITE_ENABLE_DEV_AUTH !== 'false'
 const DEV_ADMIN_EMAIL = import.meta.env.VITE_DEV_ADMIN_EMAIL || 'admin@bronxbarber.com'
 const DEV_ADMIN_PASSWORD = import.meta.env.VITE_DEV_ADMIN_PASSWORD || 'admin123'
 const DEV_AUTH_STORAGE_KEY = 'bronx_dev_admin_email'
