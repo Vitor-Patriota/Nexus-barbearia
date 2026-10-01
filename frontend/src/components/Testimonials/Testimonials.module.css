@@ -1,0 +1,112 @@
+.testimonials {
+  padding: 8rem 0;
+  background: var(--color-bg-secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--color-neon);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover,
+.cardActive {
+  border-color: rgba(0, 200, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 200, 255, 0.06);
+}
+
+.quote {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-action);
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #DC143C, #8B0000);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.authorName {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-neon);
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,366 @@
+/* Shared styles for booking steps */
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.stepSubtitle {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+  width: 100%;
+}
+
+.card:hover {
+  border-color: var(--color-neon);
+  box-shadow: 0 0 14px var(--color-neon-glow);
+}
+
+.cardSelected {
+  border-color: var(--color-action);
+  background: rgba(220, 20, 60, 0.06);
+  box-shadow: 0 0 16px var(--color-action-glow);
+}
+
+.cardName {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.cardDetail {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.cardPrice {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-neon);
+  margin-top: 0.5rem;
+  text-shadow: 0 0 10px var(--color-neon-glow);
+}
+
+.cardBadge {
+  display: inline-block;
+  background: rgba(0, 200, 255, 0.08);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  color: var(--color-neon);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.rating {
+  color: #ffd700;
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+}
+
+/* Date/Time */
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.dateBtn {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.7rem 0.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  width: 100%;
+}
+
+.dateBtn:hover { border-color: var(--color-neon); }
+.dateBtnSelected {
+  border-color: var(--color-action);
+  background: rgba(220, 20, 60, 0.08);
+}
+
+.dateDay {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+.dateNum {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-white);
+  display: block;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeBtn {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  width: 100%;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeBtn:hover { border-color: var(--color-neon); color: var(--color-neon); }
+.timeBtnSelected {
+  border-color: var(--color-action);
+  background: rgba(220, 20, 60, 0.08);
+  color: var(--color-action);
+}
+
+.timeBtnUnavail {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Form fields */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.input {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-neon);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.1);
+}
+
+/* Confirmation */
+.confirmCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.confirmRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.88rem;
+}
+
+.confirmRow:last-child { border-bottom: none; }
+
+.confirmKey { color: var(--color-text-muted); }
+.confirmVal {
+  color: var(--color-white);
+  font-weight: 500;
+  text-align: right;
+}
+
+.confirmTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.confirmTotalKey {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.confirmTotalVal {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-neon);
+  text-shadow: 0 0 12px var(--color-neon-glow);
+}
+
+/* Navigation buttons */
+.btnRow {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.btnBack {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-muted);
+  padding: 0.75rem 1.8rem;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.btnBack:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.btnNext {
+  background: var(--color-action);
+  border: none;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: 0 0 16px var(--color-action-glow);
+}
+
+.btnNext:hover {
+  background: var(--color-action-hover);
+  box-shadow: 0 0 28px var(--color-action-glow);
+  transform: translateY(-1px);
+}
+
+.btnNext:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.successIcon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.successText {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+  .grid3 { grid-template-columns: repeat(2, 1fr); }
+  .dateGrid { grid-template-columns: repeat(3, 1fr); }
+  .timeGrid { grid-template-columns: repeat(3, 1fr); }
+}
